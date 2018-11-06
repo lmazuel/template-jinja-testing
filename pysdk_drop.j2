@@ -1,0 +1,32 @@
+(message created by the CI based on PR content)
+
+# Installation instruction
+
+{% for package in packages %}
+## Package {{ package }}
+
+You can install the package `{{ package }}` of this PR using the following command:
+	`pip install "git+https://github.com/{{ pr.head.repo }}@{{ pr.head.branch }}#egg={{ package }}&subdirectory={{ package }}"`
+
+You can build a wheel to distribute for test using the following command:
+	`pip wheel --no-deps "git+https://github.com/{{ pr.head.repo }}@{{ pr.head.branch }}#egg={{ package }}&subdirectory={{ package }}"`
+
+If you have a local clone of this repository, you can also do:
+
+- `git checkout {{ pr.head.branch }}`
+- `pip install -e ./{{ package }}`
+
+
+Or build a wheel file to distribute for testing:
+
+- `git checkout {{ pr.head.branch }}`
+- `pip wheel --no-deps ./{{ package }}`
+{% endfor %}
+
+# Direct download
+
+Your files can be directly downloaded here:
+
+{% for drop in drops %}
+- [{{ drop }}](http://azuresdkinfrajobstore1.blob.core.windows.net/{{ pr.base.repo }}/pullrequests/{{ pr.id }}/dist/{{ drop }})
+{% endfor %}

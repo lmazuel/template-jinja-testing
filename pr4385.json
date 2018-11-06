@@ -1,0 +1,20 @@
+{
+    "pr": {
+        "id": 4385,
+        "head": {
+            "repo": "Azure/azure-sdk-for-python",
+            "branch": "restapi_auto_4385"
+        },
+        "base": {
+            "repo": "Azure/azure-sdk-for-python",
+            "branch": "restapi_auto_sqlvirtualmachine/resource-manager"
+        }
+    },
+    "packages": [
+        "azure-mgmt-sqlvirtualmachine"
+    ],
+    "drops": [
+        "azure_mgmt_sqlvirtualmachine-2017_03_01_preview-py2.py3-none-any.whl",
+        "azure-mgmt-sqlvirtualmachine-2017-03-01-preview.zip"
+    ]
+}
